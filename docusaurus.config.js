@@ -7,8 +7,6 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 
 
-// // Declare some <meta> tags
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Perseid',

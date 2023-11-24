@@ -38,7 +38,7 @@ const config = {
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
@@ -56,7 +56,13 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
-      }),
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: [],
+          filename: 'sitemap.xml',
+        },
+      },
     ],
   ],
 

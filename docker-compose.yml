@@ -1,0 +1,22 @@
+version: "3.6"
+
+services:
+  perseid_doc:
+    tty: true
+    user: node:node
+    image: openizr/node:6.0.0-dev
+    container_name: perseid_doc
+    command: tail -f /dev/null
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "127.0.0.1:3000:3000"
+    restart: unless-stopped
+
+# For people that use a VPN
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.50.66.0/24

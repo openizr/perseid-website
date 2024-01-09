@@ -39,7 +39,7 @@ const config = {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/openizr/perseid-website/',
+          editUrl: 'https://github.com/openizr/perseid-website/tree/main/',
         },
         // blog: {
         //   showReadingTime: true,

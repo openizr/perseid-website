@@ -29,7 +29,7 @@ class Controller<
 - **model:** Data model to use.
 - **logger:** Logging system to use.
 - **engine:** Engine to use.
-- **version:** Release version. Will be sent back along with responses through the "X-App-Release" header.
+- **version:** Release version. Will be sent back along with responses through the "X-Api-Version" header.
 - **endpoints:** List of built-in endpoints to register.
 - **parseInt:** Parses `value` into an integer.
 

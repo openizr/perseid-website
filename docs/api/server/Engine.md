@@ -93,7 +93,11 @@ Makes sure that foreign ids in `payload` reference existing resources that match
 ## withAutomaticFields
 
 ```typescript
-protected withAutomaticFields<Collection extends keyof DataModel>(collection: Collection, payload: Payload<DataModel[Collection]> | UpdatePayload<DataModel[Collection]>, context: CommandContext & { mode: 'CREATE' | 'UPDATE' }): DataModel[Collection];
+protected withAutomaticFields<Collection extends keyof DataModel>(
+  collection: Collection,
+  payload: Payload<DataModel[Collection]> | UpdatePayload<DataModel[Collection]>,
+  context: CommandContext & { mode: 'CREATE' | 'UPDATE' },
+): Promise<DataModel[Collection]>;
 ```
 
 ### Description

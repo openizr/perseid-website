@@ -83,7 +83,7 @@ MongoDB-formatted input.
 ## formatPayload
 
 ```typescript
-protected formatPayload<Collection extends keyof DataModel>(payload: Partial<DataModel[Collection]>, path?: (keyof Partial<DataModel[Collection]>)[]): Document;
+protected formatPayload<Collection extends keyof DataModel>(payload: Partial<DataModel[Collection]>): Document;
 ```
 
 ### Description
@@ -93,7 +93,6 @@ Formats `payload` for MongoDB update.
 ### Parameters
 
 - **payload:** Payload to format.
-- **path:** Optional path for payload formatting.
 
 ### Returns
 

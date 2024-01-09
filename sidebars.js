@@ -64,18 +64,127 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '@perseid/design',
-      items: ['api/design/intro'],
+      label: '@perseid/store',
+      items: [
+        {
+          type: 'doc',
+          id: "api/store/Store",
+          label: 'Store',
+        },
+        {
+          type: 'doc',
+          id: "api/store/React",
+          label: 'React connector',
+        },
+        {
+          type: 'doc',
+          id: "api/store/Vue",
+          label: 'Vue connector',
+        },
+        {
+          type: 'doc',
+          id: "api/store/Svelte",
+          label: 'Svelte connector',
+        },
+        {
+          type: 'doc',
+          id: "api/store/Router",
+          label: 'Router extension',
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: '@perseid/ui',
+      items: [
+        {
+          type: 'doc',
+          id: "api/ui/Helpers",
+          label: 'Helpers',
+        },
+        {
+          type: 'doc',
+          id: "api/ui/React",
+          label: 'React',
+        },
+        {
+          type: 'doc',
+          id: "api/ui/Svelte",
+          label: 'Svelte',
+        },
+        {
+          type: 'doc',
+          id: "api/ui/Vue",
+          label: 'Vue',
+        },
+      ],
     },
     {
       type: 'category',
       label: '@perseid/form',
-      items: ['api/form/intro'],
+      items: [
+        {
+          type: 'doc',
+          id: "api/form/Engine",
+          label: 'Engine',
+        },
+        {
+          type: 'doc',
+          id: "api/form/Plugins",
+          label: 'Plugins',
+        },
+        {
+          type: 'doc',
+          id: "api/form/React",
+          label: 'React',
+        },
+        {
+          type: 'doc',
+          id: "api/form/Svelte",
+          label: 'Svelte',
+        },
+        {
+          type: 'doc',
+          id: "api/form/Vue",
+          label: 'Vue',
+        },
+      ],
     },
     {
       type: 'category',
       label: '@perseid/client',
-      items: ['api/client/intro'],
+      items: [
+        {
+          type: 'doc',
+          id: "api/client/ApiClient",
+          label: 'ApiClient',
+        },
+        {
+          type: 'doc',
+          id: "api/client/Logger",
+          label: 'Logger',
+        },
+        {
+          type: 'doc',
+          id: "api/client/Model",
+          label: 'Model',
+        },
+        {
+          type: 'doc',
+          id: "api/client/FormBuilder",
+          label: 'FormBuilder',
+        },
+        {
+          type: 'doc',
+          id: "api/client/Store",
+          label: 'Store',
+        },
+        {
+          type: 'doc',
+          id: "api/client/React",
+          label: 'React',
+        },
+      ],
     },
   ],
 };

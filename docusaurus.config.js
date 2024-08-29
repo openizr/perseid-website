@@ -29,7 +29,7 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
+  plugins: ['docusaurus-plugin-sass'],
   presets: [
     [
       'classic',
@@ -60,7 +60,71 @@ const config = {
       },
     ],
   ],
-
+  headTags: [
+    // Declare a <link> preconnect tag
+    {
+      tagName: 'link',
+      attributes: {
+        as: 'font',
+        rel: 'preload',
+        type: 'font/woff2',
+        crossorigin: 'true',
+        href: 'https://fonts.gstatic.com/s/oxygen/v15/2sDfZG1Wl4LcnbuKjk0m.woff2',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        as: 'font',
+        rel: 'preload',
+        type: 'font/woff2',
+        crossorigin: 'true',
+        href: 'https://fonts.gstatic.com/s/orbitron/v31/yMJRMIlzdpvBhQQL_Qq7dy0.woff2',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        as: 'font',
+        rel: 'preload',
+        type: 'font/woff2',
+        crossorigin: 'true',
+        href: 'https://fonts.gstatic.com/s/oxygen/v15/2sDcZG1Wl4LcnbuCJW8zaGW5.woff2',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        as: 'font',
+        rel: 'preload',
+        type: 'font/woff2',
+        crossorigin: 'true',
+        href: 'https://fonts.gstatic.com/s/oxygen/v15/2sDcZG1Wl4LcnbuCNWgzaGW5.woff2',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        crossorigin: 'true',
+        href: 'https://fonts.gstatic.com',
+      },
+    },
+    // // Declare some json-ld structured data
+    // {
+    //   tagName: 'script',
+    //   attributes: {
+    //     type: 'application/ld+json',
+    //   },
+    //   innerHTML: JSON.stringify({
+    //     '@context': 'https://schema.org/',
+    //     '@type': 'Organization',
+    //     name: 'Meta Open Source',
+    //     url: 'https://opensource.fb.com/',
+    //     logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
+    //   }),
+    // },
+  ],
   themeConfig:
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   {
@@ -72,32 +136,8 @@ const config = {
     // Replace with your project's social card
     image: 'img/social-card.png',
     metadata: [
-      { name: 'keywords', content: 'front-end,back-end,prototype,javascript,typescript,framework,web,app' },
+      { name: 'keywords', content: 'front-end,back-end,prototype,javascript,typescript,product,production-ready,framework,web,app' },
     ],
-    // headTags: [
-    //   // Declare a <link> preconnect tag
-    //   {
-    //     tagName: 'link',
-    //     attributes: {
-    //       rel: 'preconnect',
-    //       href: 'https://example.com',
-    //     },
-    //   },
-    //   // Declare some json-ld structured data
-    //   {
-    //     tagName: 'script',
-    //     attributes: {
-    //       type: 'application/ld+json',
-    //     },
-    //     innerHTML: JSON.stringify({
-    //       '@context': 'https://schema.org/',
-    //       '@type': 'Organization',
-    //       name: 'Meta Open Source',
-    //       url: 'https://opensource.fb.com/',
-    //       logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
-    //     }),
-    //   },
-    // ],
     navbar: {
       title: 'Perseid',
       logo: {
@@ -121,7 +161,18 @@ const config = {
           type: 'docSidebar',
           sidebarId: 'apiSidebar',
           position: 'left',
-          label: 'API',
+          label: 'Docs',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'learnSidebar',
+          position: 'left',
+          label: 'Learn',
+        },
+        {
+          href: 'https://github.com/sponsors/openizr',
+          position: 'right',
+          label: 'Sponsor',
         },
         // { to: '/blog', label: 'Blog', position: 'left' },
         {
@@ -135,11 +186,19 @@ const config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Resources',
           items: [
             {
-              label: 'API',
+              label: 'Learn',
+              to: '/docs/learn/intro',
+            },
+            {
+              label: 'Documentation',
               to: '/docs/api/dev-kit/config',
+            },
+            {
+              label: 'Examples',
+              href: 'https://github.com/openizr/perseid/tree/main/examples/',
             },
           ],
         },
@@ -150,10 +209,10 @@ const config = {
               label: 'Stack Overflow',
               href: 'https://stackoverflow.com/questions/tagged/perseid',
             },
-            // {
-            //   label: 'Discord',
-            //   href: 'https://discordapp.com/invite/docusaurus',
-            // },
+            {
+              label: 'Discord',
+              href: 'https://discordapp.com/invite/docusaurus',
+            },
             // {
             //   label: 'Twitter',
             //   href: 'https://twitter.com/docusaurus',
@@ -167,10 +226,14 @@ const config = {
               label: 'GitHub',
               href: 'https://github.com/openizr/perseid',
             },
+            // {
+            //   label: 'Blog',
+            //   href: 'https://github.com/openizr/perseid',
+            // },
           ],
         },
       ],
-      copyright: `Released under the MIT License.<br/>Copyright (c) ${new Date().getFullYear()} Openizr.`,
+      copyright: `Made with ❤️ in Toulouse, France.<br/>Released under the MIT License.<br/>Copyright (c) ${new Date().getFullYear()} Openizr`,
     },
     prism: {
       theme: prismThemes.dracula,

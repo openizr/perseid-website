@@ -153,14 +153,13 @@ body {
   }
 }
 
-.markdown {
-  a {
-    text-decoration: underline;
-    font-weight: 700;
-  }
-  ul {
-    list-style: initial;
-  }
+.markdown a {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.markdown ul {
+  list-style: initial;
 }
 
 :root,

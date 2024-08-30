@@ -110,6 +110,12 @@ const config = {
         href: 'https://fonts.gstatic.com',
       },
     },
+    {
+      tagName: 'script',
+      attributes: {
+        src: '/js/analytics.js',
+      }
+    }
     // // Declare some json-ld structured data
     // {
     //   tagName: 'script',
@@ -211,7 +217,7 @@ const config = {
             },
             {
               label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              href: 'https://discord.gg/featRc8x',
             },
             // {
             //   label: 'Twitter',

@@ -113,6 +113,7 @@ const config = {
     {
       tagName: 'script',
       attributes: {
+        defer: 'defer',
         src: '/js/analytics.js',
       }
     },

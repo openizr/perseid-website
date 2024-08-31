@@ -115,21 +115,46 @@ const config = {
       attributes: {
         src: '/js/analytics.js',
       }
-    }
-    // // Declare some json-ld structured data
-    // {
-    //   tagName: 'script',
-    //   attributes: {
-    //     type: 'application/ld+json',
-    //   },
-    //   innerHTML: JSON.stringify({
-    //     '@context': 'https://schema.org/',
-    //     '@type': 'Organization',
-    //     name: 'Meta Open Source',
-    //     url: 'https://opensource.fb.com/',
-    //     logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
-    //   }),
-    // },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        sizes: '16x16',
+        href: '/img/favicon-16x16.20240831.png',
+      }
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        sizes: '32x32',
+        href: '/img/favicon-32x32.20240831.png',
+      }
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/img/apple-icon-180x180.20240831.png',
+      }
+    },
+    // Declare some json-ld structured data
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org/',
+        '@type': 'Organization',
+        name: 'Perseid',
+        url: 'https://perseid.dev',
+        logo: 'https://perseid.dev/img/social-card.20240831.png',
+        sameAs: []
+      }),
+    },
   ],
   themeConfig:
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -140,15 +165,17 @@ const config = {
       respectPrefersColorScheme: false,
     },
     // Replace with your project's social card
-    image: 'img/social-card.png',
+    image: 'img/social-card.20240831.png',
     metadata: [
       { name: 'keywords', content: 'front-end,back-end,prototype,javascript,typescript,product,production-ready,framework,web,app' },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:site_name', content: 'Perseid' },
     ],
     navbar: {
       title: 'Perseid',
       logo: {
         alt: 'Perseid logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.20240831.svg',
       },
       items: [
         // {

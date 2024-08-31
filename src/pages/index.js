@@ -1,13 +1,12 @@
 import './index.scss';
 import * as React from 'react';
-import kivImage from './kiv.png';
-import selfImage from './self.png';
-import winkImage from './wink.png';
+import kivImage from './kiv.webp';
+import selfImage from './self.webp';
+import winkImage from './wink.webp';
 import Layout from '@theme/Layout';
-import heroImage from './code.png';
 import Link from '@docusaurus/Link';
-import inbentaImage from './inb.png';
-import openizrImage from './openizr.png';
+import inbentaImage from './inb.webp';
+import openizrImage from './openizr.webp';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 function Benefit({ title, icon, description, cta }) {
@@ -107,11 +106,11 @@ export default function Home() {
         <section className='references'>
           <h3>Trusted by top innovative teams</h3>
           <div className='w-full flex flex-wrap items-end justify-center hgap-5 vgap-4'>
-            <img src={kivImage} />
-            <img src={inbentaImage} />
-            <img src={selfImage} />
-            <img src={winkImage} />
-            <img src={openizrImage} />
+            <img width="192" height="40" alt="Kiv Broker" src={kivImage} />
+            <img width="192" height="40" alt="Inbenta" src={inbentaImage} />
+            <img width="192" height="40" alt="Selfcity" src={selfImage} />
+            <img width="192" height="40" alt="Wink" src={winkImage} />
+            <img width="192" height="40" alt="Openizr" src={openizrImage} />
           </div>
         </section>
         <main className='benefits'>
@@ -143,7 +142,7 @@ export default function Home() {
           <Benefit
             title="Discover all the features"
             description="Deep dive into the framework."
-            cta="Read more"
+            cta="Documentation"
           />
         </main>
       </div>

@@ -65,11 +65,11 @@
 }
 
 .benefits {
-  @include extend(flex flex-wrap hgap-4 vgap-4 m\:grid m\:cols-2);
   z-index: 1;
   position: relative;
   padding: 0 var(--gaps-3);
   background: none;
+  @include extend(grid vgap-4);
 
   .benefit {
     padding: 3px;
@@ -212,5 +212,377 @@
 
   @include modifiers(earth) {
     mask: url(/src/pages/earth.svg) no-repeat center / contain;
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 2000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.what {
+  height: 116rem;
+  position: relative;
+  @include extend(l\:none);
+  padding: 0 var(--gaps-3);
+  --percentage: 0;
+  --section-height: 15rem;
+
+  p {
+    margin: 0;
+  }
+
+  &__label {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: all 250ms ease-in-out;
+  }
+
+  &__section {
+    width: 100%;
+    margin: auto;
+    $color: #20173b;
+    transition: all 250ms ease-in-out;
+    height: var(--section-height);
+    // border: 4px solid red;
+    $rgba-color: rgba(226, 18, 167, 0);
+
+    &:nth-child(4) {
+      margin-top: var(--gaps-6);
+
+      .what__section__path {
+        display: grid;
+      }
+      .what__section__sticky svg {
+        width: 200px;
+        justify-self: flex-end;
+        height: calc(11rem + var(--gaps-5));
+      }
+    }
+
+    // Data model
+    &:nth-child(4) {
+      height: fit-content;
+    }
+
+    &:nth-child(6) {
+      margin-top: var(--gaps-5);
+    }
+
+    // REST API
+    &:nth-child(7) {
+      margin-top: var(--section-height);
+    }
+
+    // UI
+    &:nth-child(8) {
+      height: fit-content;
+      margin-top: var(--section-height);
+    }
+
+    &__sticky {
+      top: 7rem;
+      position: sticky;
+    }
+
+    &__path {
+      top: 7rem;
+      height: 0;
+      position: sticky;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        height: calc(9rem + var(--section-height));
+      }
+    }
+
+    &__block {
+      z-index: 1;
+      background: #0b061a;
+      transition: all 250ms ease-in-out;
+      @include extend(block text-center);
+      color: $color;
+      border-radius: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 2px solid $color;
+      font-family: 'Orbitron', sans-serif;
+      padding: var(--gaps-4) var(--gaps-3);
+      box-shadow: 0px 0px 12px 4px $rgba-color;
+
+      path,
+      code {
+        stroke: $color;
+        transition: all 250ms ease-in-out;
+        transition-delay: 250ms;
+      }
+
+      @include modifiers(api) {
+        & > div > div {
+          margin: auto;
+
+          & > code {
+            @include extend(block);
+          }
+        }
+      }
+
+      @include modifiers(data-model) {
+        & > code {
+          margin: auto;
+          width: fit-content;
+
+          & > span {
+            margin-left: var(--gaps-3);
+          }
+        }
+      }
+    }
+
+    @include modifiers(label) {
+      margin: auto;
+      margin-top: var(--gaps-5);
+      height: fit-content;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 1px;
+      opacity: 0;
+    }
+
+    @include modifiers(visible) {
+      opacity: 1;
+      $color: #e212a7;
+      $rgba-color: rgba(226, 18, 167, 0.7);
+
+      .what__label {
+        opacity: 1;
+      }
+    }
+
+    @include modifiers(visible, &) {
+      &__block {
+        color: $color;
+        border: 2px solid $color;
+        box-shadow: 0px 0px 12px 4px $rgba-color;
+
+        path {
+          stroke: $color;
+        }
+      }
+    }
+  }
+}
+
+.what2 {
+  padding: 0 var(--gaps-3);
+  @include extend(none l\:grid vgap-5);
+
+  &__label {
+    opacity: 0;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 250ms ease-in-out;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  &__section {
+    @include extend(flex w-full items-start);
+    $color: #20173b;
+    transition: all 250ms ease-in-out;
+    $rgba-color: rgba(226, 18, 167, 0);
+
+    &:nth-child(1),
+    &:nth-child(3) {
+      max-width: 60%;
+    }
+
+    &:nth-child(2) {
+      min-width: 95%;
+    }
+
+    &:nth-child(1):not(.what2__section--data-model) {
+      transform: translateY(5rem);
+
+      .what2__section__block {
+        transition-delay: 1500ms;
+
+        path {
+          transition-delay: 1750ms;
+        }
+      }
+
+      .what2__section__path {
+        transform: translateY(1rem);
+      }
+    }
+
+    &:nth-child(2) {
+      .what2__section__block {
+        transition-delay: 3000ms;
+      }
+    }
+
+    &:nth-child(3) {
+      .what2__section__block {
+        transition-delay: 3500ms;
+      }
+
+      path {
+        transition-delay: 3750ms;
+      }
+    }
+
+    &:nth-child(3) {
+      transform: translateY(-5rem);
+
+      .what2__section__path {
+        transform: translateY(-1rem);
+      }
+    }
+
+    &__path {
+      @include extend(self-center flex-auto);
+
+      svg {
+        max-height: 10rem;
+        min-width: 100%;
+        height: fit-content;
+
+        path {
+          stroke-dashoffset: 2000;
+        }
+      }
+    }
+
+    &__block {
+      z-index: 1;
+      min-width: 15rem;
+      background: #0b061a;
+      transition: all 250ms ease-in-out;
+      @include extend(block text-center);
+      color: $color;
+      border-radius: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 2px solid $color;
+      font-family: 'Orbitron', sans-serif;
+      padding: var(--gaps-4) var(--gaps-3);
+      box-shadow: 0px 0px 12px 4px $rgba-color;
+
+      path,
+      code {
+        stroke: $color;
+        margin: auto;
+        width: fit-content;
+        transition: all 250ms ease-in-out;
+        transition-delay: 250ms;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      svg {
+        margin: auto;
+      }
+
+      @include modifiers(data-model) {
+        & > code {
+          margin: auto;
+          width: fit-content;
+
+          & > span {
+            margin-left: var(--gaps-3);
+          }
+        }
+      }
+
+      @include query(l) {
+        min-width: 20rem;
+      }
+    }
+  }
+
+  @include modifiers(visible, &) {
+    &__label {
+      opacity: 1;
+    }
+
+    &__section:nth-child(1) {
+      .what2__section__path svg path {
+        animation: dash 3000ms linear forwards;
+        animation-delay: 1000ms;
+      }
+    }
+
+    &__section:nth-child(2) {
+      .what2__section__path svg path {
+        animation: dash 3000ms linear forwards;
+        animation-delay: 2000ms;
+      }
+    }
+
+    &__section:nth-child(3) {
+      .what2__section__path svg path {
+        animation: dash 3000ms linear forwards;
+        animation-delay: 3000ms;
+      }
+    }
+
+    &__section {
+      $color: #e212a7;
+      $rgba-color: rgba(226, 18, 167, 0.7);
+      &__block {
+        color: $color;
+        border: 2px solid $color;
+        box-shadow: 0px 0px 12px 4px $rgba-color;
+
+        path {
+          stroke: $color;
+        }
+      }
+    }
+
+    @include modifiers(visible) {
+      opacity: 1;
+
+      .what__label {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.path {
+  stroke-dasharray: 2000;
+  fill-opacity: 0;
+  filter: url(#strokeGlow);
+  stroke-dashoffset: calc(20 * calc(100 - var(--percentage)));
+}
+
+.subtitle {
+  color: #e212a7;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.what,
+.what2,
+.benefits > div:first-child {
+  h3 {
+    font-weight: 300;
+    font-size: 1.5rem;
   }
 }

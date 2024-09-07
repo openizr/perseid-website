@@ -204,6 +204,11 @@ const config = {
           label: 'Learn',
         },
         {
+          to: '/blog/introducing-perseid-the-product-oriented-javascript-framework',
+          position: 'left',
+          label: 'Why',
+        },
+        {
           href: 'https://github.com/sponsors/openizr',
           position: 'right',
           label: 'Sponsor',

@@ -221,10 +221,8 @@ function What2() {
   React.useEffect(() => {
     const element = document.querySelector('.what2');
     const observer = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        element.classList.add('what2--visible');
-      }
-    }, { threshold: .75 });
+      element.classList.toggle('what2--visible', entries[0].isIntersecting);
+    }, { threshold: [.75] });
 
     observer.observe(element);
     return () => {
@@ -430,8 +428,8 @@ export default function Home() {
               </Link>
               <Link
                 className="hero__button"
-                to="/docs/api/dev-kit/config">
-                Documentation
+                to="/blog/introducing-perseid-the-product-oriented-javascript-framework">
+                Why Perseid?
               </Link>
             </div>
           </div>

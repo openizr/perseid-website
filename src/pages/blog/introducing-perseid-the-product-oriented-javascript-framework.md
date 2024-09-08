@@ -28,9 +28,9 @@ Are we doomed to follow this pattern forever?
 
 ## We need to adopt Product principles at the core of our work
 
-We’re still operating under paradigms that force us to waste time on setup, configuration, and stack decisions. Building a web app should take hours, not weeks. Come one, it's not rocket science.
+We’re still operating under paradigms that force us to waste time on setup, configuration, and stack decisions. Building a web app should take hours, not weeks. Come on, it's not rocket science.
 
-### The gap between proroduct and code
+### The gap between product and code
 
 Web development today is misaligned with the fast-paced, iterative nature of product design. Developers are burdened with making decisions that don’t matter to the customers they serve, focusing on technology rather than business logic. When discussing new features or addressing customer needs, the overwhelming technical work required behind the scenes takes priority, and we lose sight of the bigger picture. This happens because the tools we use don't allow developers to swiftly move from idea to execution. They certainly don’t enable rapid prototyping or the quick iteration needed to keep up in a competitive market.
 

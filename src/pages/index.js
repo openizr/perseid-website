@@ -221,7 +221,7 @@ function What2() {
   React.useEffect(() => {
     const element = document.querySelector('.what2');
     const observer = new IntersectionObserver(entries => {
-      element.classList.toggle('what2--visible', entries[0].isIntersecting);
+      element.classList.toggle('what2--visible', true);
     }, { threshold: [.75] });
 
     observer.observe(element);

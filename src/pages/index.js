@@ -349,7 +349,6 @@ function What2() {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
-  const ref = React.createRef < HTMLElement > (null);
 
   React.useEffect(() => {
     if (typeof window !== 'undefined') {

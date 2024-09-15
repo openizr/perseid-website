@@ -349,8 +349,18 @@ function What2() {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+  const ref = React.createRef < HTMLElement > (null);
 
   React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      console.log('IMPORT');
+      const script = document.createElement('script');
+      script.defer = 'defer';
+      script.crossOrigin = 'true';
+      script.src = '/js/index.B6KA2n71.js';
+      script.type = 'module';
+      document.head.appendChild(script);
+    }
     const all = document.querySelectorAll(".benefit");
     const handleMouseMove = (ev) => {
       all.forEach((e) => {
@@ -436,26 +446,10 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className='hero__form flex-auto' suppressHydrationWarning={true}>
+            <div className='hero__form flex-auto'>
               <div className="loader">
-                <svg className="svg-def" style={{ display: 'none' }}>
-                  <defs>
-                    <filter id="strokeGlow">
-                      <feOffset in="StrokePaint" result="centeredOffset" />
-                      <feGaussianBlur in="centeredOffset" stdDeviation="2" result="blur1" />
-                      <feGaussianBlur in="centeredOffset" stdDeviation="5" result="blur2" />
-                      <feGaussianBlur in="centeredOffset" stdDeviation="7" result="blur3" />
-                      <feMerge>
-                        <feMergeNode in="blur1" />
-                        <feMergeNode in="blur2" />
-                        <feMergeNode in="blur3" />
-                        <feMergeNode in="SourceGraphic" />
-                      </feMerge>
-                    </filter>
-                  </defs>
-                </svg>
                 <svg viewBox="0 0 100 100" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 20 H80 V80 H20 V20" stroke="#E212A7" strokeWidth="2" strokeLinecap="round" className="loader_path" vectorEffect="non-scaling-stroke" />
+                  <path d="M20 20 H80 V80 H20 V20" stroke="#E212A7" strokeWidth="2" strokeLinecap="round" className="loader__path" vectorEffect="non-scaling-stroke" />
                 </svg>
               </div>
             </div>

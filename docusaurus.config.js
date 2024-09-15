@@ -118,15 +118,6 @@ const config = {
       }
     },
     {
-      tagName: 'script',
-      attributes: {
-        defer: 'defer',
-        type: 'module',
-        crossOrigin: 'true',
-        src: '/js/index.B6KA2n71.js',
-      }
-    },
-    {
       tagName: 'link',
       attributes: {
         rel: 'icon',

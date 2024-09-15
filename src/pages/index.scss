@@ -1,4 +1,4 @@
-@import '@perseid/ui/core/index.scss';
+@import '/src/pages/core/index.scss';
 
 @include init();
 
@@ -625,4 +625,18 @@
   stroke-dashoffset: 1500;
   filter: url(#strokeGlow);
   animation: spin 4s ease-in-out infinite;
+}
+
+@keyframes test {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.perseid-form {
+  opacity: 0;
+  animation: test 400ms ease-in-out forwards !important;
 }

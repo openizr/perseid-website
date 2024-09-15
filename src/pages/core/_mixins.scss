@@ -1,0 +1,303 @@
+/**
+ * Copyright (c) Openizr. All Rights Reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+
+/**
+ * Applies given style to `modifiers` BEM+ modifier.
+ *
+ * @param {string} name BEM+ modifiers names to apply style to.
+ *
+ * @param {string} [children = false] Whether to use the mixin for modifiers' children, or the
+ * modifiers themselves.
+ */
+@mixin modifiers($modifiers, $children: false) {
+  $selectors: '';
+  @each $modifier in $modifiers {
+    $selectors: '#{$selectors}[class*="--#{$modifier}"]';
+  }
+
+  @if ($children !=false) {
+    &#{$selectors} #{&} {
+      @content;
+    }
+  } @else {
+    &#{$selectors} {
+      @content;
+    }
+  }
+}
+
+/**
+ * Makes the calling selector inherit given built-in classes.
+ *
+ * @param {string[]} classes List of built-in classes to inherit properties from.
+ */
+@mixin extend($classes) {
+  @each $class in $classes {
+    @if (str-index($class, flex)) {
+      @extend %flex;
+    }
+
+    @if (str-index($class, col-)) {
+      @extend %col;
+    }
+
+    @if (str-index($class, grid)) {
+      @extend %grid;
+    }
+
+    @if (str-index($class, grid) or str-index($class, flex)) {
+      @extend %grid-flex;
+    }
+
+    @if (str-index($class, none) or str-index($class, block)) {
+      @extend %none-block;
+    }
+
+    @if (str-index($class, self)) {
+      @extend %self;
+    }
+
+    @if (str-index($class, w-full)) {
+      @extend %width;
+    }
+
+    @if (str-index($class, h-full)) {
+      @extend %height;
+    }
+
+    @if (str-index($class, text)) {
+      @extend %text;
+    }
+
+    @extend %#{$class};
+  }
+}
+
+/**
+ * Integrates given style into a media query based on `firstBreakpoint` and `secondBreakpoint`.
+ * If only one breakpoint is passed, the media query will be of type "min-width". Otherwise, it will
+ * be of type "min-width" and "max-width". Highest breakpoint value will be considered as the
+ * max-width, while the other one will be min-width.
+ *
+ * @param {string|number} firstBreakpoint First breakpoint. Can be a predefined value (like `xl`),
+ * or an absolute value (like `1200px`).
+ *
+ * @param {string|number} [secondBreakpoint = ''] Second breakpoint. Can be a predefined value
+ * (like `xl`), or an absolute value (like `1200px`).
+ */
+@mixin query($firstBreakpoint, $secondBreakpoint: '') {
+  $firstValue: if(
+    map-has-key($breakpoints, $firstBreakpoint),
+    map-get($breakpoints, $firstBreakpoint),
+    $firstBreakpoint
+  );
+  $secondValue: if(
+    map-has-key($breakpoints, $secondBreakpoint),
+    map-get($breakpoints, $secondBreakpoint),
+    $secondBreakpoint
+  );
+
+  @if (type-of($firstValue) != 'number') {
+    @error "#{$firstValue} is not a valid breakpoint.";
+  }
+
+  @if ($secondValue != '' and type-of($firstValue) != 'number') {
+    @error "#{$secondValue} is not a valid breakpoint.";
+  }
+
+  // For '0px' breakpoint, we don't need to write a media query. The @content code is rendered.
+  @if ($firstValue==0px and $secondValue== '') {
+    @content;
+  }
+
+  // Build a max-width if needed
+  @else if ($secondValue != '') {
+    $query: if(
+      $firstValue <=$secondValue,
+      '(min-width:#{$firstValue}) and (max-width:#{$secondValue - 1})',
+      '(min-width:#{$secondValue}) and (max-width:#{$firstValue - 1})'
+    );
+
+    @media screen and #{$query} {
+      @content;
+    }
+  }
+
+  // Otherwise, build a min-width media query
+  @else {
+    @media screen and (min-width:#{$firstValue}) {
+      @content;
+    }
+  }
+}
+
+/**
+ * Generates all the built-in CSS classes and variables. You should call this mixin in your main
+ * style entrypoint, but not in additional files that are dynamically imported, to avoid unecessary
+ * CSS duplication.
+ */
+@mixin init() {
+  * {
+    // Number of columns set in a layout scope.
+    --cols: 1;
+
+    // Gap between columns set in a layout scope.
+    --hgap: initial;
+    --vgap: initial;
+
+    // Number of columns spaning set in a layout item scope.
+    --span: 1;
+
+    // Layout properties.
+    --flow: initial;
+    --disp: initial;
+    --just: initial;
+    --items: initial;
+    --self: initial;
+
+    // Flex properties.
+    --wrap: initial;
+    --dir: initial;
+    --flex: none;
+
+    // Text properties.
+    --text: initial;
+
+    // Size properties.
+    --width: initial;
+    --height: initial;
+  }
+
+  // Generating breakpoints-based built-in classes...
+  @each $breakpoint, $value in $breakpoints {
+    @include query($breakpoint) {
+      $class-bp: if($breakpoint==xxs, '', #{$breakpoint}#{'\\:'});
+
+      @each $class, $val in $classes {
+        .#{$class-bp}#{$class} {
+          @extend %#{$class-bp}#{$class};
+        }
+      }
+    }
+  }
+
+  [class*='grid'] {
+    @extend %grid;
+  }
+
+  [class*='grid'],
+  [class*='flex'] {
+    @extend %grid-flex;
+  }
+
+  [class*='none'],
+  [class*='block'] {
+    @extend %none-block;
+  }
+
+  [class*='self'] {
+    @extend %self;
+  }
+
+  [class*='text-'] {
+    @extend %text;
+  }
+
+  [class*='w-full'] {
+    @extend %width;
+  }
+
+  [class*='h-full'] {
+    @extend %height;
+  }
+
+  [class*='flex'] {
+    @extend %flex;
+  }
+
+  [class*='col-'] {
+    @extend %col;
+  }
+
+  body {
+    @each $variable, $values in $variables {
+      @each $key, $value in $values {
+        --#{$variable}-#{$key}: #{$value};
+      }
+    }
+
+    &:before {
+      position: fixed;
+      z-index: 1000;
+      content: 'Your browser is outdated and might not be able to display this page.';
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80vw;
+      max-width: 20rem;
+      padding: 1.5em;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+      background: white;
+    }
+
+    @supports (--css: variables) and (display: grid) {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  // Resets annoying default browsers' CSS properties.
+  * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input,
+  input:focus {
+    border: none;
+    outline: none;
+  }
+
+  button {
+    border: none;
+    cursor: pointer;
+    background: none;
+
+    &::-moz-focus-inner {
+      padding: 0;
+      border: none;
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  body {
+    word-break: break-word;
+  }
+
+  *:hover {
+    -webkit-tap-highlight-color: transparent;
+  }
+}

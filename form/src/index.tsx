@@ -90,7 +90,7 @@ const formConfiguration: Configuration = {
               }
             });
           };
-          setTimeout(sendRequest, 1000);
+          sendRequest();
         }
         return next(data);
       });
@@ -290,20 +290,9 @@ function Field(props: FormFieldProps): React.JSX.Element {
   );
 }
 
-// Let's run the app!
-window.onload = async (): Promise<void> => {
-  let container: HTMLElement | null = null;
-  while (container === null) {
-    // Creating React root...
-    container = document.querySelector('.hero__form') as unknown as HTMLElement | null ?? null;
-    if (container !== null) {
-      const app = createRoot(container);
-      app.render(
-        // Router is the main component for any Perseid app.
-        <Form Field={Field} configuration={formConfiguration} />,
-      );
-    }
-    // eslint-disable-next-line
-    await new Promise((resolve) => { setTimeout(resolve, 250); });
-  }
-};
+const container = document.querySelector('.hero__form') as unknown as HTMLElement;
+const app = createRoot(container);
+app.render(
+  // Router is the main component for any Perseid app.
+  <Form Field={Field} configuration={formConfiguration} />,
+);

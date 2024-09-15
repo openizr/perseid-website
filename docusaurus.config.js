@@ -123,7 +123,7 @@ const config = {
         defer: 'defer',
         type: 'module',
         crossOrigin: 'true',
-        src: '/js/index.axHTnZ2h.js',
+        src: '/js/index.B6KA2n71.js',
       }
     },
     {

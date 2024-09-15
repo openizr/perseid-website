@@ -90,7 +90,7 @@ const formConfiguration: Configuration = {
               }
             });
           };
-          sendRequest();
+          setTimeout(sendRequest, 1000);
         }
         return next(data);
       });

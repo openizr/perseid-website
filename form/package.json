@@ -1,0 +1,35 @@
+{
+  "name": "feedback-form-react",
+  "type": "module",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@perseid/dev-kit": "^10.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/@perseid/dev-kit/main.cjs"
+    ]
+  },
+  "devKitConfig": {
+    "target": "web",
+    "splitChunks": false,
+    "devServer": {
+      "host": "0.0.0.0",
+      "port": "3001"
+    },
+    "html": "index.html",
+    "srcPath": "src",
+    "distPath": "dist"
+  },
+  "scripts": {
+    "dev": "node node_modules/@perseid/dev-kit/scripts/dev.js",
+    "build": "node node_modules/@perseid/dev-kit/scripts/build.js"
+  },
+  "dependencies": {
+    "@perseid/form": "^4.0.0",
+    "@types/react": "^18.3.4",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

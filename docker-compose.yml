@@ -1,6 +1,5 @@
-version: "3.6"
-
 services:
+
   perseid_doc:
     tty: true
     user: node:node
@@ -12,6 +11,18 @@ services:
     ports:
       - "127.0.0.1:3000:3000"
     restart: unless-stopped
+
+  perseid_doc_form:
+    tty: true
+    user: node:node
+    image: openizr/node:7.0.0-dev
+    container_name: perseid_doc_form
+    command: sh -c "yarn && yarn run dev"
+    volumes:
+      - ./form:/var/www/html
+      - ~/.cache/yarn:/home/node/.cache/yarn
+    ports:
+      - "127.0.0.1:3001:3001"
 
 # For people that use a VPN
 networks:

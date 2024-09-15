@@ -227,3 +227,12 @@ article a.hero__button {
 article a.hero__button p {
   margin: 0;
 }
+
+
+.hero__form {
+  border-radius: 8px;
+  background: #0b061a;
+  border: 2px solid #291f27;
+  height: 10rem;
+  width: 30rem;
+}

@@ -436,7 +436,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className='hero__form flex-auto'>
+            <div className='hero__form flex-auto' suppressHydrationWarning={true}>
               <div className="loader">
                 <svg className="svg-def" style={{ display: 'none' }}>
                   <defs>

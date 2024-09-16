@@ -351,15 +351,14 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
 
   React.useEffect(() => {
-    if (typeof window !== 'undefined') {
-      console.log('IMPORT');
-      const script = document.createElement('script');
-      script.defer = 'defer';
-      script.crossOrigin = 'true';
-      script.src = '/js/index.B6KA2n71.js';
-      script.type = 'module';
-      document.head.appendChild(script);
+    const mount = () => {
+      if (window.mountForm) {
+        window.mountForm?.();
+      } else {
+        setTimeout(mount, 250);
+      }
     }
+    mount();
     const all = document.querySelectorAll(".benefit");
     const handleMouseMove = (ev) => {
       all.forEach((e) => {

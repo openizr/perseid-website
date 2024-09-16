@@ -290,9 +290,8 @@ function Field(props: FormFieldProps): React.JSX.Element {
   );
 }
 
-const container = document.querySelector('.hero__form') as unknown as HTMLElement;
-const app = createRoot(container);
-app.render(
-  // Router is the main component for any Perseid app.
-  <Form Field={Field} configuration={formConfiguration} />,
-);
+(window as Window & typeof globalThis & { mountForm: () => void; }).mountForm = (): void => {
+  const container = document.querySelector('.hero__form') as unknown as HTMLElement;
+  const app = createRoot(container);
+  app.render(<Form Field={Field} configuration={formConfiguration} />);
+};

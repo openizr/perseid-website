@@ -29,7 +29,17 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    'docusaurus-plugin-sass',
+    [
+      "posthog-docusaurus",
+      {
+        apiKey: "phc_eduF3rSaUChsGCQn28Rp9MTL4vaxQtQXjNxt491nR91",
+        appUrl: "https://eu.i.posthog.com",
+        enableInDevelopment: false,
+      },
+    ],
+  ],
   presets: [
     [
       'classic',
@@ -114,7 +124,9 @@ const config = {
       tagName: 'script',
       attributes: {
         defer: 'defer',
-        src: '/js/analytics.js',
+        type: 'module',
+        crossOrigin: 'true',
+        src: '/js/index.B6AT2xE0.js',
       }
     },
     {

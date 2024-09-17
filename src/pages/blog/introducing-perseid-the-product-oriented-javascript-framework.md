@@ -1,6 +1,7 @@
 ---
+id: /blog/introducing-perseid-the-product-oriented-javascript-framework
 title: "Introducing Perseid: The Product-Oriented JavaScript Framework"
-description: Perseid solves
+description: Perseid is a JavaScript framework that streamlines web apps development, helping teams prototype in minutes, build scalable, maintainable apps with a focus on efficiency.
 hide_table_of_contents: false
 ---
 

@@ -221,6 +221,11 @@ const config = {
           label: 'Why',
         },
         {
+          to: '/examples',
+          position: 'left',
+          label: 'Examples',
+        },
+        {
           href: 'https://github.com/sponsors/openizr',
           position: 'right',
           label: 'Sponsor',
@@ -254,7 +259,7 @@ const config = {
             },
             {
               label: 'Examples',
-              href: 'https://github.com/openizr/perseid/tree/main/examples/',
+              to: '/examples',
             },
           ],
         },

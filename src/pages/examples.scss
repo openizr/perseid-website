@@ -1,0 +1,34 @@
+.example {
+  border-radius: 4px;
+  transition: all 250ms ease-in-out;
+  border: 2px solid rgba(254, 254, 254, 0.4117647059);
+
+  &:hover {
+    box-shadow: 0 0 12px 4px #8f848cb3;
+    a {
+      color: #fefefe;
+      border-color: #fefefe;
+    }
+  }
+
+  a {
+    margin: 0;
+    border: none;
+    display: block;
+    color: #e3e3e3;
+    text-decoration: none;
+    padding: var(--gaps-3) var(--gaps-4);
+
+    h2 {
+      font-size: 1.125rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    p {
+      margin: 0;
+      font-weight: 100;
+    }
+  }
+}

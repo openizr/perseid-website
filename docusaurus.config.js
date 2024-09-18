@@ -172,6 +172,18 @@ const config = {
   themeConfig:
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   {
+    algolia: {
+      // The application ID provided by Algolia
+      appId: '6ZQL7E992S',
+
+      // Public API key: it is safe to commit it
+      apiKey: 'a66d9df42f9ccb669daf9bab66e83900',
+
+      indexName: 'perseid',
+
+      // Optional: see doc section below
+      contextualSearch: true,
+    },
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: true,
@@ -191,6 +203,10 @@ const config = {
         src: 'img/logo.20240831.svg',
       },
       items: [
+        {
+          type: 'search',
+          position: 'left',
+        },
         // {
         //   type: 'docSidebar',
         //   sidebarId: 'conceptsSidebar',
@@ -206,23 +222,23 @@ const config = {
         {
           type: 'docSidebar',
           sidebarId: 'apiSidebar',
-          position: 'left',
+          position: 'right',
           label: 'Docs',
         },
         {
           type: 'docSidebar',
           sidebarId: 'learnSidebar',
-          position: 'left',
+          position: 'right',
           label: 'Learn',
         },
         {
           to: '/blog/introducing-perseid-the-product-oriented-javascript-framework',
-          position: 'left',
+          position: 'right',
           label: 'Why',
         },
         {
           to: '/examples',
-          position: 'left',
+          position: 'right',
           label: 'Examples',
         },
         {
@@ -233,12 +249,10 @@ const config = {
         // { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/openizr/perseid',
-          label: 'GitHub',
           position: 'right',
         },
         {
           href: 'https://discord.gg/jsWCRMqM2K',
-          label: 'Discord',
           position: 'right',
         },
       ],

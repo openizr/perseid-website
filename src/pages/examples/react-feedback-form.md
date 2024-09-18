@@ -1,7 +1,7 @@
 ---
 id: /examples/react-feedback-form
 title: React User Feedback Form
-description: This example demonstrates how to create a simple user feedback form using React and @perseid/form, the best alternative to Formik and React Hook Form.
+description: This example demonstrates how to create a simple user feedback form using React and Perseid, the best alternative to Formik and React Hook Form.
 hide_table_of_contents: false
 ---
 

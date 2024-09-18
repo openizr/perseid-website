@@ -19,7 +19,7 @@ export default function Examples() {
                 <div className='grid vgap-3'>
                   {[{
                     title: 'React Feedback Form',
-                    description: 'This example demonstrates how to create a simple user feedback form using React and @perseid/form.'
+                    description: 'This example demonstrates how to create a simple user feedback form using React and Perseid.'
                   }].map((example) => (
                     <div className='example'>
                       <Link to="/examples/react-feedback-form">

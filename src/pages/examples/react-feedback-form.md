@@ -1,7 +1,7 @@
 ---
 id: /examples/react-feedback-form
 title: React User Feedback Form
-description: This example demonstrates how to create a simple user feedback form using React and @perseid/form.
+description: This example demonstrates how to create a simple user feedback form using React and @perseid/form, the best alternative to Formik and React Hook Form.
 hide_table_of_contents: false
 ---
 
@@ -13,7 +13,7 @@ User feedback forms are a powerful tool for businesses, providing valuable insig
 
 The data collected can be used to make informed decisions, helping businesses enhance customer satisfaction, refine their offerings, and stay ahead of market trends. Additionally, showing that a business values customer input fosters trust and loyalty, turning users into advocates. Feedback forms also provide opportunities to resolve issues quickly, preventing negative experiences from escalating into poor reviews or lost customers.
 
-`perseid/form` offers a simple yet powerful solution for building even the most <strong>complex dynamic forms</strong>, whether <strong>single</strong> or <strong>multi-step</strong>, compatible with all popular front-end frameworks. Its <strong>high performance</strong> and seamless <strong>integration with React</strong> make it a <strong>fantastic alternative to Formik and React Hook Form</strong>."
+`perseid/form` offers a simple yet powerful solution for building even the most <strong>complex dynamic forms</strong>, whether <strong>single</strong> or <strong>multi-step</strong>, compatible with all popular front-end frameworks. Its <strong>high performance</strong> and seamless <strong>integration with React</strong> make it <strong>the best alternative to Formik and React Hook Form</strong>."
 
 <br />
 

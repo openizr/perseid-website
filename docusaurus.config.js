@@ -207,23 +207,11 @@ const config = {
           type: 'search',
           position: 'left',
         },
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'conceptsSidebar',
-        //   position: 'left',
-        //   label: 'Concepts',
-        // },
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'tutorialSidebar',
-        //   position: 'left',
-        //   label: 'Tutorial',
-        // },
         {
-          type: 'docSidebar',
-          sidebarId: 'apiSidebar',
-          position: 'right',
           label: 'Docs',
+          type: 'docSidebar',
+          position: 'right',
+          sidebarId: 'docsSidebar',
         },
         {
           type: 'docSidebar',
@@ -269,7 +257,7 @@ const config = {
             },
             {
               label: 'Documentation',
-              to: '/docs/api/dev-kit/config',
+              to: '/docs',
             },
             {
               label: 'Examples',

@@ -19,7 +19,7 @@ function Benefit({ title, icon, description, cta }) {
           <p>{description}</p>
           {(cta !== undefined) && (<Link
             // className="button button--primary button--lg"
-            to="/docs/api/dev-kit/config">
+            to="/docs">
             {cta}
           </Link>)}
         </div>

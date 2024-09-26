@@ -55,175 +55,353 @@ const sidebars = {
       ],
     },
   ],
-  apiSidebar: [
+  docsSidebar: [
     {
-      type: 'category',
-      label: '@perseid/dev-kit',
-      items: [
-        'api/dev-kit/config',
-        'api/dev-kit/commands',
-      ],
+      type: 'doc',
+      id: "index",
+      label: 'Overview',
+    },
+    // {
+    //   type: 'category',
+    //   label: 'Guides',
+    //   items: [
+    //     {
+    //       type: 'doc',
+    //       id: "ui/components/title",
+    //       label: 'Title',
+    //     },
+    //   ]
+    // },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: '<span class="menu__list-item--header">@perseid/dev-kit</span>',
+    },
+    {
+      type: 'doc',
+      id: "dev-kit/introduction",
+      label: 'Introduction',
+    },
+    {
+      type: 'doc',
+      id: "dev-kit/commands",
+      label: 'Commands',
+    },
+    {
+      type: 'doc',
+      id: "dev-kit/configuration",
+      label: 'Configuration',
+    },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: '<hr />',
+    },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: '<span class="menu__list-item--header">@perseid/core</span>',
+    },
+    {
+      type: 'doc',
+      id: "core/introduction",
+      label: 'Introduction',
+    },
+    {
+      type: 'doc',
+      id: "core/helpers",
+      label: 'Helpers',
     },
     {
       type: 'category',
-      label: '@perseid/core',
-      items: [
-        'api/core/helpers',
-        'api/core/Id',
-        'api/core/Logger',
-        'api/core/I18n',
-        'api/core/Model',
-      ],
-    },
-    {
-      type: 'category',
-      label: '@perseid/server',
-      items: [
-        'api/server/Model',
-        'api/server/Errors',
-        'api/server/Logger',
-        'api/server/Engine',
-        'api/server/Profiler',
-        'api/server/Controller',
-        'api/server/CacheClient',
-        'api/server/UsersEngine',
-        'api/server/EmailClient',
-        'api/server/BucketClient',
-        'api/server/DatabaseClient',
-        'api/server/FastifyController',
-      ],
-    },
-    {
-      type: 'category',
-      label: '@perseid/jobs',
-      items: [
-        'api/jobs/JobScheduler',
-        'api/jobs/DatabaseClient',
-      ],
-    },
-    {
-      type: 'category',
-      label: '@perseid/store',
+      label: 'Classes',
       items: [
         {
           type: 'doc',
-          id: "api/store/Store",
-          label: 'Store',
+          id: "core/classes/Id",
+          label: 'Id',
         },
         {
           type: 'doc',
-          id: "api/store/React",
-          label: 'React connector',
+          id: "core/classes/I18n",
+          label: 'I18n',
         },
         {
           type: 'doc',
-          id: "api/store/Vue",
-          label: 'Vue connector',
-        },
-        {
-          type: 'doc',
-          id: "api/store/Svelte",
-          label: 'Svelte connector',
-        },
-        {
-          type: 'doc',
-          id: "api/store/Router",
-          label: 'Router extension',
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: '@perseid/ui',
-      items: [
-        {
-          type: 'doc',
-          id: "api/ui/Helpers",
-          label: 'Helpers',
-        },
-        {
-          type: 'doc',
-          id: "api/ui/React",
-          label: 'React',
-        },
-        {
-          type: 'doc',
-          id: "api/ui/Svelte",
-          label: 'Svelte',
-        },
-        {
-          type: 'doc',
-          id: "api/ui/Vue",
-          label: 'Vue',
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: '@perseid/form',
-      items: [
-        {
-          type: 'doc',
-          id: "api/form/Engine",
-          label: 'Engine',
-        },
-        {
-          type: 'doc',
-          id: "api/form/Plugins",
-          label: 'Plugins',
-        },
-        {
-          type: 'doc',
-          id: "api/form/React",
-          label: 'React',
-        },
-        {
-          type: 'doc',
-          id: "api/form/Svelte",
-          label: 'Svelte',
-        },
-        {
-          type: 'doc',
-          id: "api/form/Vue",
-          label: 'Vue',
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: '@perseid/client',
-      items: [
-        {
-          type: 'doc',
-          id: "api/client/ApiClient",
-          label: 'ApiClient',
-        },
-        {
-          type: 'doc',
-          id: "api/client/Logger",
+          id: "core/classes/Logger",
           label: 'Logger',
         },
         {
           type: 'doc',
-          id: "api/client/Model",
+          id: "core/classes/Model",
           label: 'Model',
         },
+      ]
+    },
+    // {
+    //   type: 'html',
+    //   defaultStyle: true,
+    //   value: '<hr />',
+    // },
+    // {
+    //   type: 'html',
+    //   defaultStyle: true,
+    //   value: '<span class="menu__list-item--header">@perseid/server</span>',
+    // },
+    // {
+    //   type: 'doc',
+    //   id: "ui/introduction",
+    //   label: 'Introduction',
+    // },
+    // {
+    //   type: 'doc',
+    //   id: "ui/helpers",
+    //   label: 'Concepts',
+    // },
+    // {
+    //   type: 'category',
+    //   label: 'Services',
+    //   items: [
+    //     {
+    //       type: 'doc',
+    //       id: "ui/components/title",
+    //       label: 'Title',
+    //     },
+    //   ]
+    // },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: '<hr />',
+    },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: '<span class="menu__list-item--header">@perseid/jobs</span>',
+    },
+    {
+      type: 'doc',
+      id: "jobs/concepts",
+      label: 'Concepts',
+    },
+    {
+      type: 'category',
+      label: 'Core services',
+      items: [
         {
           type: 'doc',
-          id: "api/client/FormBuilder",
-          label: 'FormBuilder',
+          id: "jobs/core-services/DatabaseClient",
+          label: 'DatabaseClient',
         },
         {
           type: 'doc',
-          id: "api/client/Store",
-          label: 'Store',
+          id: "jobs/core-services/JobScheduler",
+          label: 'JobScheduler',
+        },
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Connectors',
+      items: [
+        {
+          type: 'doc',
+          id: "jobs/connectors/MongoDB",
+          label: 'MongoDB',
         },
         {
           type: 'doc',
-          id: "api/client/React",
-          label: 'React',
+          id: "jobs/connectors/MySQL",
+          label: 'MySQL',
         },
-      ],
+        {
+          type: 'doc',
+          id: "jobs/connectors/PostgreSQL",
+          label: 'PostgreSQL',
+        },
+      ]
+    },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: '<hr />',
+    },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: '<span class="menu__list-item--header">@perseid/store</span>',
+    },
+    {
+      type: 'doc',
+      id: "store/concepts",
+      label: 'Concepts',
+    },
+    {
+      type: 'doc',
+      id: "store/best-practices",
+      label: 'Best practices',
+    },
+    {
+      type: 'doc',
+      id: "store/complete-example",
+      label: 'Complete example',
+    },
+    {
+      type: 'doc',
+      id: "store/store",
+      label: 'Store',
+    },
+    {
+      type: 'doc',
+      id: "store/connectors",
+      label: 'Connectors',
+    },
+    {
+      type: 'doc',
+      id: "store/extensions",
+      label: 'Extensions',
+    },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: '<hr />',
+    },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: '<span class="menu__list-item--header">@perseid/ui</span>',
+    },
+    // {
+    //   type: 'doc',
+    //   id: "ui/introduction",
+    //   label: 'Introduction',
+    // },
+    {
+      type: 'doc',
+      id: "ui/helpers",
+      label: 'Helpers',
+    },
+    {
+      type: 'category',
+      label: 'Components',
+      items: [
+        {
+          type: 'doc',
+          id: "ui/components/title",
+          label: 'Title',
+        },
+        {
+          type: 'doc',
+          id: "ui/components/paragraph",
+          label: 'Paragraph',
+        },
+        {
+          type: 'doc',
+          id: "ui/components/icon",
+          label: 'Icon',
+        },
+        {
+          type: 'doc',
+          id: "ui/components/link",
+          label: 'Link',
+        },
+        {
+          type: 'doc',
+          id: "ui/components/button",
+          label: 'Button',
+        },
+        {
+          type: 'doc',
+          id: "ui/components/image",
+          label: 'Image',
+        },
+        {
+          type: 'doc',
+          id: "ui/components/options",
+          label: 'Options',
+        },
+        {
+          type: 'doc',
+          id: "ui/components/textfield",
+          label: 'Textfield',
+        },
+        {
+          type: 'doc',
+          id: "ui/components/textarea",
+          label: 'Textarea',
+        },
+        {
+          type: 'doc',
+          id: "ui/components/tooltip",
+          label: 'Tooltip',
+        },
+        {
+          type: 'doc',
+          id: "ui/components/filepicker",
+          label: 'FilePicker',
+        },
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Styling',
+      items: [
+        {
+          type: 'doc',
+          id: "ui/styling/configuration",
+          label: 'Configuration',
+        },
+        {
+          type: 'doc',
+          id: "ui/styling/mixins",
+          label: 'Mixins',
+        },
+        {
+          type: 'doc',
+          id: "ui/styling/classes",
+          label: 'Classes',
+        },
+        {
+          type: 'doc',
+          id: "ui/styling/templates",
+          label: 'Templates',
+        },
+        {
+          type: 'doc',
+          id: "ui/styling/placeholders",
+          label: 'Placeholders',
+        },
+      ]
+    },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: '<hr />',
+    },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: '<span class="menu__list-item--header">@perseid/form</span>',
+    },
+    {
+      type: 'doc',
+      id: "form/concepts",
+      label: 'Concepts',
+    },
+    {
+      type: 'doc',
+      id: "form/engine",
+      label: 'Engine',
+    },
+    {
+      type: 'doc',
+      id: "form/connectors",
+      label: 'Connectors',
+    },
+    {
+      type: 'doc',
+      id: "form/plugins",
+      label: 'Plugins',
     },
   ],
 };

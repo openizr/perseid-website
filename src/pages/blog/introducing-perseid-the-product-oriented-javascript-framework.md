@@ -106,7 +106,7 @@ Ready to experience a new paradigm for web apps development?
 <br/>
 
 <Link
-  className="hero__button"
+  className="cta cta--centered cta--emphasis"
   to="/docs/learn/intro">
   Start building
 </Link>

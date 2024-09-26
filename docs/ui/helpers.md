@@ -23,8 +23,8 @@ function markdown(text: string, light?: boolean): string;
 ### Light mode vs Full mode
 
 You can use the markdown parser in two different modes: light or full.
-- In light mode, only basic text formatting will be supported: [strong](./helpers.md#strong), [emphasis](./helpers.md#emphasis), [underline](./helpers.md#underline), [italic]((./helpers.md#italic)), [hyperlinks](./helpers.md#hyperlink), [line breaks]((./helpers.md#line-break)), [ordered lists]((./helpers.md#ordered-list)), [unordered lists]((./helpers.md#unordered-list)), [horizontal rules]((./helpers.md#horizontal-rule)), [inline code]((./helpers.md#inline-code))
-- In full mode, [images]((./helpers.md#image)), [paragraphs]((./helpers.md#paragraph)), [headings]((./helpers.md#heading)) and [block quotes]((./helpers.md#block-quote)) will also be supported, in addition to light mode's basic formatting.
+- In light mode, only basic text formatting will be supported: [strong](/docs/ui/helpers#strong), [emphasis](/docs/ui/helpers#emphasis), [underline](/docs/ui/helpers#underline), [italic](/docs/ui/helpers#italic), [hyperlinks](/docs/ui/helpers#hyperlink), [line breaks](/docs/ui/helpers#line-break), [ordered lists](/docs/ui/helpers#ordered-list), [unordered lists](/docs/ui/helpers#unordered-list), [horizontal rules](/docs/ui/helpers#horizontal-rule), [inline code](/docs/ui/helpers#inline-code)
+- In full mode, [images](/docs/ui/helpers#image-full-mode), [paragraphs](/docs/ui/helpers#paragraph-full-mode), [headings](/docs/ui/helpers#headings-full-mode) and [block quotes](/docs/ui/helpers#blockquote-full-mode) will also be supported, in addition to light mode's basic formatting.
 
 ### Escaping markdown tags
 

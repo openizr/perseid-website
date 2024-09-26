@@ -215,14 +215,14 @@ article a.cta {
   border: 1px solid #ececec;
   transition: all 250ms ease-in-out;
   padding: var(--gaps-2) var(--gaps-3);
-
-  &:hover,
-  &:focus,
-  &:active {
-    text-decoration: none;
-    border: 1px solid #e212a7;
-  }
 }
+
+/* article a.cta:hover,
+article a.cta:focus,
+article a.cta:active {
+  text-decoration: none;
+  border: 1px solid #e212a7;
+} */
 
 article a.cta--emphasis {
   color: #e212a7;

@@ -67,11 +67,16 @@ const sidebars = {
     //   items: [
     //     {
     //       type: 'doc',
-    //       id: "ui/components/title",
-    //       label: 'Title',
+    //       id: "guides/creating-your-data-model",
+    //       label: 'Creating your data model',
     //     },
     //   ]
     // },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: '<hr />',
+    },
     {
       type: 'html',
       defaultStyle: true,
@@ -135,6 +140,11 @@ const sidebars = {
           type: 'doc',
           id: "core/classes/Model",
           label: 'Model',
+        },
+        {
+          type: 'doc',
+          id: "core/classes/HttpClient",
+          label: 'HttpClient',
         },
       ]
     },

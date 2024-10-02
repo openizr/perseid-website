@@ -224,6 +224,11 @@ article a.cta:active {
   border: 1px solid #e212a7;
 } */
 
+article .theme-code-block {
+  display: block;
+  margin-bottom: var(--gaps-3);
+}
+
 article a.cta--emphasis {
   color: #e212a7;
   border: 1px solid #e212a7;

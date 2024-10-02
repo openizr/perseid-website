@@ -61,17 +61,17 @@ const sidebars = {
       id: "index",
       label: 'Overview',
     },
-    // {
-    //   type: 'category',
-    //   label: 'Guides',
-    //   items: [
-    //     {
-    //       type: 'doc',
-    //       id: "guides/creating-your-data-model",
-    //       label: 'Creating your data model',
-    //     },
-    //   ]
-    // },
+    {
+      type: 'category',
+      label: 'Guides',
+      items: [
+        {
+          type: 'doc',
+          id: "guides/creating-your-data-model",
+          label: 'Creating your data model',
+        },
+      ]
+    },
     {
       type: 'html',
       defaultStyle: true,

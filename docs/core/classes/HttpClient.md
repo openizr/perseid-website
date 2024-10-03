@@ -13,6 +13,8 @@ Provides a cleaner `fetch` API with better error handling.
 ## Complete example
 
 ```typescript
+import { HttpClient } from '@perseid/core';
+
 class MyAPiClient extends HttpClient {
   public async callTestEndpoint(): Promise<{ test: string; }> {
     return this.request({

@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 title: Perseid Documentation Overview
 description: Explore Perseid, master the fundamentals of the framework, and dive deep into its advanced features and APIs.
 hide_table_of_contents: false

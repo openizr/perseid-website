@@ -12,6 +12,7 @@ const config = {
   title: 'Perseid',
   tagline: 'Prototype and build full-stack, production-ready web apps in minutes',
   favicon: 'img/favicon.ico',
+  trailingSlash: false,
 
   // Set the production url of your site here
   url: 'https://perseid.dev',

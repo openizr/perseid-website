@@ -5,7 +5,64 @@ description: The @perseid/core HttpClient provides a cleaner fetch API with a be
 
 # HttpClient
 
+Class to use as a base for all services that need to perform HTTP requests.
 Provides a cleaner `fetch` API with better error handling.
+
+---
+
+## Complete example
+
+```typescript
+class MyAPiClient extends HttpClient {
+  public async callTestEndpoint(): Promise<{ test: string; }> {
+    return this.request({
+      method: 'POST',
+      url: 'https://test.test/test',
+      // Passing optional JSON body...
+      body: { key: 'value' },
+      // ...and additional headers...
+      headers: { Authorization: 'Bearer XXXXXXXXXXXXXXXXXXXX' },
+    });
+  }
+}
+
+const myApiClient = new MyAPiClient(3000);
+
+// If the request fails (HTTP status >= 400), will reject with something like:
+// `{
+//   body: {...},
+//   ok: false,
+//   url: 'https://test.test/test',
+//   type: 'default',
+//   status: 500,
+//   headers: {...},
+//   statusText: 'Internal Server Error',
+//   redirected: false,
+// }`
+// Otherwise, will resolve with something like `{ test: 'hello world!' }`.
+await myApiClient.callTestEndpoint();
+```
+
+---
+
+## Types
+
+```typescript
+/** HTTP request settings. */
+interface RequestSettings {
+  /** HTTP method to use. */
+  method: 'GET' | 'PATCH' | 'DELETE' | 'PUT' | 'POST' | 'HEAD' | 'OPTIONS';
+
+  /** Request URL. */
+  url: string;
+
+  /** Request body. */
+  body?: string | FormData | Record<string, unknown>;
+
+  /** Request headers. */
+  headers?: Record<string, string>;
+}
+```
 
 ---
 
@@ -42,6 +99,7 @@ const httpClient = new HttpClient(3000);
 ## rawRequest
 
 Performs a new HTTP request with `settings`.
+Automatically handles request body serialization and `Content-Type` headers.
 
 ```typescript
 protected rawRequest(settings: RequestSettings): Promise<Response>;
@@ -57,7 +115,7 @@ Raw HTTP response.
 
 ### Throws
 
-If the request fails.
+If request fails, either because of a network error, or if HTTP status is >= 400.
 
 ### Usage
 
@@ -69,7 +127,8 @@ await httpClient.rawRequest({ method: 'POST', url: 'https://example.com' });
 
 ## request
 
-Performs a new HTTP request with `settings` and parses the response.
+Performs a new HTTP request with `settings`.
+Automatically handles request body serialization, `Content-Type` headers and response body parsing.
 
 ```typescript
 protected request<Response>(settings: RequestSettings): Promise<Response>;

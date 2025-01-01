@@ -6,6 +6,10 @@ hide_table_of_contents: false
 
 import Link from '@docusaurus/Link';
 
+<head>
+  <link rel="canonical" href="https://perseid/dev/docs" />
+</head>
+
 # Perseid Docs
 
 Guides, resources, and API references to help you build with Perseid.
@@ -13,8 +17,8 @@ Guides, resources, and API references to help you build with Perseid.
 <div className="flex hgap-3 justify-start">
   <Link
     className="cta cta--emphasis"
-    to="/docs/learn/intro">
-    Guided tour
+    to="/docs/guides/creating-your-data-model">
+    General guides
   </Link>
   <Link
     className="cta"
@@ -43,6 +47,13 @@ Because each Perseid package can be used independently, the documentation is spl
     <Link to="/docs/core/introduction">
       <h2>core</h2>
       <p>Isomorphic helpers and classes for any project.</p>
+    </Link>
+  </div>
+
+  <div className='example'>
+    <Link to="/docs/server/concepts">
+      <h2>server</h2>
+      <p>Fully featured REST APIs generator.</p>
     </Link>
   </div>
 

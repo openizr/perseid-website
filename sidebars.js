@@ -62,15 +62,24 @@ const sidebars = {
       label: 'Overview',
     },
     {
-      type: 'category',
-      label: 'Guides',
-      items: [
-        {
-          type: 'doc',
-          id: "guides/creating-your-data-model",
-          label: 'Creating your data model',
-        },
-      ]
+      type: 'html',
+      defaultStyle: true,
+      value: '<hr />',
+    },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: '<span class="menu__list-item--header">Guides</span>',
+    },
+    {
+      type: 'doc',
+      id: "guides/creating-your-data-model",
+      label: 'Creating your data model',
+    },
+    {
+      type: 'doc',
+      id: "guides/configuring-the-rest-api",
+      label: 'Configuring the REST API',
     },
     {
       type: 'html',
@@ -148,37 +157,102 @@ const sidebars = {
         },
       ]
     },
-    // {
-    //   type: 'html',
-    //   defaultStyle: true,
-    //   value: '<hr />',
-    // },
-    // {
-    //   type: 'html',
-    //   defaultStyle: true,
-    //   value: '<span class="menu__list-item--header">@perseid/server</span>',
-    // },
-    // {
-    //   type: 'doc',
-    //   id: "ui/introduction",
-    //   label: 'Introduction',
-    // },
-    // {
-    //   type: 'doc',
-    //   id: "ui/helpers",
-    //   label: 'Concepts',
-    // },
-    // {
-    //   type: 'category',
-    //   label: 'Services',
-    //   items: [
-    //     {
-    //       type: 'doc',
-    //       id: "ui/components/title",
-    //       label: 'Title',
-    //     },
-    //   ]
-    // },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: '<hr />',
+    },
+    {
+      type: 'html',
+      defaultStyle: true,
+      value: '<span class="menu__list-item--header">@perseid/server</span>',
+    },
+    {
+      type: 'doc',
+      id: "server/concepts",
+      label: 'Concepts',
+    },
+    {
+      type: 'category',
+      label: 'API Reference',
+      items: [
+        {
+          type: 'doc',
+          id: "server/api-reference/AbstractDatabaseClient",
+          label: 'AbstractDatabaseClient',
+        },
+        {
+          type: 'doc',
+          id: "server/api-reference/BucketClient",
+          label: 'BucketClient',
+        },
+        {
+          type: 'doc',
+          id: "server/api-reference/CacheClient",
+          label: 'CacheClient',
+        },
+        {
+          type: 'doc',
+          id: "server/api-reference/Controller",
+          label: 'Controller',
+        },
+        {
+          type: 'doc',
+          id: "server/api-reference/EmailClient",
+          label: 'EmailClient',
+        },
+        {
+          type: 'doc',
+          id: "server/api-reference/Engine",
+          label: 'Engine',
+        },
+        {
+          type: 'doc',
+          id: "server/api-reference/ExpressController",
+          label: 'ExpressController',
+        },
+        {
+          type: 'doc',
+          id: "server/api-reference/FastifyController",
+          label: 'FastifyController',
+        },
+        {
+          type: 'doc',
+          id: "server/api-reference/Logger",
+          label: 'Logger',
+        },
+        {
+          type: 'doc',
+          id: "server/api-reference/Model",
+          label: 'Model',
+        },
+        {
+          type: 'doc',
+          id: "server/api-reference/MongoDatabaseClient",
+          label: 'MongoDatabaseClient',
+        },
+        {
+          type: 'doc',
+          id: "server/api-reference/MySQLDatabaseClient",
+          label: 'MySQLDatabaseClient',
+        },
+        {
+          type: 'doc',
+          id: "server/api-reference/PostgreSQLDatabaseClient",
+          label: 'PostgreSQLDatabaseClient',
+        },
+        {
+          type: 'doc',
+          id: "server/api-reference/Profiler",
+          label: 'Profiler',
+        },
+        {
+          type: 'doc',
+          id: "server/api-reference/UsersEngine",
+          label: 'UsersEngine',
+        },
+      ]
+    },
     {
       type: 'html',
       defaultStyle: true,
